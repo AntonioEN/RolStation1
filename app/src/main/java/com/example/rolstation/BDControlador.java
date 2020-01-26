@@ -16,7 +16,6 @@ public class BDControlador extends SQLiteOpenHelper {
     String sqlTorneo = "create table torneos( fecha date, foto blob)";
 
 
-
     public BDControlador(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
