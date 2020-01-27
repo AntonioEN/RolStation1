@@ -20,6 +20,7 @@ public class BDControlador extends SQLiteOpenHelper {
         super(context, name, factory, version);
     }
 
+
     public void onCreate(SQLiteDatabase db) {
         //Se ejecuta la sentencia SQL de creación de la tabla
         db.execSQL(sqlRegisto);

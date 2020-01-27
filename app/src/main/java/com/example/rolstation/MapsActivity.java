@@ -2,6 +2,7 @@ package com.example.rolstation;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,6 +24,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        BDControlador MisJuegos = new BDControlador(this,"MisRoles", null, 1);
+        SQLiteDatabase bd = MisJuegos.getWritableDatabase();
     }
 
 
@@ -44,4 +48,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(sydney).title("qUE NO ES SIDNEY"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
+
 }
